@@ -25,6 +25,7 @@
 .b-head-container {
     background: url(../img/head-container%20background.png) no-repeat center;
     min-height: 731px;
+    margin-bottom: 42px;
 }
 
 .b-header {
@@ -33,6 +34,7 @@
     margin-bottom: 40px;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: flex-start;
 }
 
 .b-header__logo {
@@ -54,7 +56,7 @@
     font-weight: bold;
     width: 479px;
     box-sizing: border-box;
-    padding: 11px 19px 14px 15px;
+    padding: 11px 18px 14px 16px;
     margin: 0;
     position: relative;
 }
@@ -110,7 +112,7 @@
 .b-info {
     text-transform: uppercase;
     max-width: 740px; /*костыль для строк текста*/
-    margin-bottom: 45px;
+    margin-bottom: 46px;
 }
 
 .b-info__title-other {
@@ -127,13 +129,13 @@
     font-weight: 300;
     letter-spacing: -0.2px;
     margin: 0;
-    padding: 0 30px 0 16px;
+    padding: 0 31px 0 16px;
     display: inline-block;
     margin-bottom: 12px;
     line-height: 48px;
 }
 
-.b-info__title:last-of-type {
+.b-info__title:last-child {
     margin-bottom: 0;
 }
 
@@ -153,9 +155,9 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
-    width: 445px;
-    padding-bottom: 0;
-    
+    width: 446px;
+    padding: 0;
+    margin-bottom: 41px;
 }
 
 .b-form__input:active,
@@ -173,19 +175,15 @@
     letter-spacing: -0.25px;
 }
 
-.b-form__input-name,
-.b-form__input-tel {
+.b-form__input {
     display: block;
     padding-left: 34px;
 }
 
 .b-form__input-name {
-    margin-bottom: 28px;
+    margin-bottom: 29px;
 }
 
-.b-form__input-tel {
-    margin-bottom: 41px;
-}
 
 .b-form__input-before {
     position: relative;
@@ -199,7 +197,7 @@
 .b-form__input-before::before {
     content: "*";
     position: absolute;
-    top: 4px;
+    top: 2px;
     left: 7px;
 }
 
@@ -248,8 +246,7 @@
     flex:0 1 100%;
     margin: 0;
     padding: 0;
-    padding-top: 42px;
-    margin-bottom: 58px;/*moz не видит верхнего отступа*/
+    margin-bottom: 58px;
 }
 
 .b-content__figure {
@@ -279,12 +276,13 @@
     color: #bb1d1f;
 }
 
-
 /*LIST*/
 
 .b-content-list {
     background: #f7f7f7;
     border-bottom: 1px solid #f7f7f7;/*костыль для маргин боттем*/
+    padding-top: 52px;
+    margin-bottom:103px;
 }
 
 .b-content-list__title {
@@ -294,19 +292,18 @@
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.5px;
     margin: 0;
-    padding: 0;
-    padding-top: 52px;
+    padding:0;
     margin-bottom: 47px;
 }
 
 .b-content-list__item {
     list-style: none;
     line-height: 72px;
+    margin: 0;
     margin-bottom: 57px;
-    
 }
 
-.b-content-list__point {
+.b-content-list__item li {
     padding-left: 60px;
     position: relative;
     font-family: 'Open Sans', sans-serif;
@@ -316,7 +313,7 @@
     letter-spacing: -0.6px;
 }
 
-.b-content-list__point::before {
+.b-content-list__item li::before {
     content: "";
     position: absolute;
     width: 19px;
@@ -338,10 +335,10 @@
 
 .b-important-info__title-group {
     position: relative;
-    padding-top: 103px;
+    margin: 0;
+    padding: 0;
     padding-left: 95px;
     margin-bottom: 28px;
-    margin-right: 0;
     line-height: 34px;
 }
 
@@ -351,30 +348,31 @@
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: -0.27px;
-    position: relative;
     margin: 0;
     padding: 0;
 }
 
-.b-important-info__image::before {
+.b-important-info__banners::before {
     content: "!";
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 260px;
     position: absolute;
-    top: 152px;
-    left: 15px;
     box-sizing: border-box;
+    bottom: 70px;
+    left: 0;
+    padding-left: 12px;
 }
 
 .b-important-info__banners {
     border: 3px solid #ff9c00;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 19px 50px 21px 40px;
+    position: relative;
+    padding: 19px 50px 21px 50px;
 }
 
-.b-important-info__text {
+.b-important-info__banners p {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -386,7 +384,7 @@
 }
 
 
-.b-important-info__text-style {
+.b-important-info__banners p:first-child {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 400;
@@ -397,17 +395,16 @@
     margin-bottom: 36px;
 }
 
-.b-important-info__text-style::after {
+.b-important-info__banners p:first-child::after {
     content: "";
     position: absolute;
     width: 110px;
     border-bottom: 3px solid #000000;
-    top: 58px;
-    left: 332px;
+    padding-top: 37px;
+    left: 44%;
 }
 
-.b-important-info__text-other {
-    display: block;
+.b-important-info__banners p:last-child {
     padding-top: 20px;
 }
 
@@ -417,6 +414,7 @@
     background: #bb1d1f;
     padding-top: 30px;
     margin-bottom: 42px;
+    border-bottom: 1px solid #bb1d1f;/*костыль для margin-b формы*/
 }
 
 .b-feedback__title {
@@ -435,16 +433,12 @@
     text-transform: uppercase;
 }
 
-.b-feedback__tel {
-    text-decoration: none;
-    color: #ffffff;
-}
-
 .b-feedback__forms {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-bottom: 43px;
+    justify-content: flex-start;
+    margin-bottom: 42px;
 }
 
 .b-feedback__input {
@@ -506,6 +500,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 60px;
 }
 
 .b-info-site__logo-image {
@@ -530,7 +525,7 @@
     padding-top: 4px;
 }
 
-.b-info-site__text {
+.b-info-site__logo p {
     font-size: 21px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
@@ -542,10 +537,9 @@
 .b-info-site__copyright {
     text-decoration: none;
     padding-top: 11px;
-    margin-bottom: 40px;
 }
 
-.b-info-site__copyright-text {
+.b-info-site__copyright p {
     font-size: 14px;
     color: #9b9b9b;
     font-family: 'Open Sans', sans-serif;
